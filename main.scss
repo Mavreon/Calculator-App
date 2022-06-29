@@ -1,0 +1,133 @@
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.15s ease-in;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+/* VARIABLES */
+/* THEME 1 COLOR VARIABLES*/
+$color-very-dark-desaturated-blue: hsl(222, 26%, 31%);
+$color-very-dark-desaturated-blue: hsl(223, 31%, 20%);
+$color-very-dark-desaturated-blue: hsl(224, 36%, 15%);
+$color-desaturated-dark-blue: hsl(225, 21%, 49%);
+$color-desaturated-dark-blue: hsl(224, 28%, 35%);
+$color-red: hsl(6, 63%, 50%);
+$color-dark-red: hsl(6, 70%, 34%);
+$color-light-grayish-orange: hsl(30, 25%, 89%);
+$color-grayish-orange: hsl(28, 16%, 65%);
+$color-very-dark-grayish-blue: hsl(221, 14%, 31%);
+/* THEME 2 COLOR VARIABLES*/
+$color-light-gray: hsl(0, 0%, 90%);
+$color-grayish-red: hsl(0, 5%, 81%);
+$color-very-light-gray: hsl(0, 0%, 93%);
+$color-dark-moderate-cyan: hsl(185, 42%, 37%);
+$color-very-dark-cyan: hsl(185, 58%, 25%);
+$color-orange: hsl(25, 98%, 40%);
+$color-dark-orange: hsl(25, 99%, 27%);
+$color-light-grayish-yellow: hsl(45, 7%, 89%);
+$color-dark-grayish-orange: hsl(35, 11%, 61%);
+$color-very-dark-grayish-yellow: hsl(60, 10%, 19%);
+/* THEME 3 COLOR VARIABLES*/
+$color-very-dark-violet: hsl(268, 75%, 9%);
+$color-very-dark-violet: hsl(268, 71%, 12%);
+$color-dark-violet: hsl(281, 89%, 26%);
+$color-vivid-magenta: hsl(285, 91%, 52%);
+$color-pure-cyan: hsl(176, 100%, 44%);
+$color-soft-cyan: hsl(177, 92%, 70%);
+$color-very-dark-violet: hsl(268, 47%, 21%);
+$color-dark-magenta: hsl(290, 70%, 36%);
+$color-light-yellow: hsl(52, 100%, 62%);
+$color-very-dark-blue: hsl(198, 20%, 13%);
+/* GENERIC COLOR VARIABLES*/
+$color-white: hsl(0, 0, 100%);
+
+body{
+    font-family: 'League Spartan', sans-serif;
+    max-width: 144rem;
+    margin: 0 auto;
+    font-size: 1.6rem;
+    height: 100vh;
+}
+
+.container{
+    background-color: red;
+    width: 100%;
+    height: 98%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .box{
+        width: 40%;
+        background-color: blue;
+        padding: 2rem;
+        .head-section{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            .title{
+
+            }
+            .setting{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 2rem;
+                .label-text{
+                    text-transform: uppercase;
+                    font-size: 700;
+                }
+                .toggle-theme-btn{
+                    position: relative;
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    text-align: center;
+                    padding: 0 0.5rem;
+                    background-color: yellow;
+                    border-radius: 100px;
+                    width: 6.8rem;
+                    height: 2rem;
+                    //overflow: hidden;
+
+                    .indicator{
+                        position: absolute;
+                        width: 1.6rem;
+                        height: 1.6rem;
+                        background-color: black;
+                        border-radius: 100px;
+                        transform: translateX(-2.3rem);
+                        /*-2.3rem 0rem 2.3rem*/
+                    }
+
+                    .theme{
+                        &-1{
+                            //background-color: green;
+                            width: 100%;
+                            height: 2rem;
+                        }
+                        &-2{
+                            //background-color: skyblue;
+                            width: 100%;
+                            height: 2rem;
+                        }
+                        &-3{
+                            //background-color: orange;
+                            width: 100%;
+                            height: 2rem;
+                        }
+                        &-text{
+                            position: absolute;
+                            transform: translate(-5px, -16px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
