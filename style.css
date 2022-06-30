@@ -15,12 +15,20 @@ html {
 /* THEME 2 COLOR VARIABLES*/
 /* THEME 3 COLOR VARIABLES*/
 /* GENERIC COLOR VARIABLES*/
+/* MIXINS */
+/* STYLING */
 body {
   font-family: 'League Spartan', sans-serif;
   max-width: 144rem;
   margin: 0 auto;
   font-size: 1.6rem;
   height: 100vh; }
+  body.theme-one {
+    background-color: #3a4764; }
+  body.theme-two {
+    background-color: #e6e6e6; }
+  body.theme-three {
+    background-color: #58077d; }
 
 .container {
   width: 100%;
@@ -31,7 +39,6 @@ body {
   justify-content: center; }
   .container .box {
     width: 40%;
-    background-color: blue;
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -40,6 +47,14 @@ body {
       width: 100%;
       display: flex;
       justify-content: space-between; }
+      .container .box .head-section.theme-one {
+        color: white; }
+      .container .box .head-section.theme-two {
+        color: black; }
+      .container .box .head-section.theme-three {
+        color: #ffe53d; }
+      .container .box .head-section .title {
+        text-transform: lowercase; }
       .container .box .head-section .setting {
         display: flex;
         align-items: center;
@@ -48,49 +63,172 @@ body {
         .container .box .head-section .setting .label-text {
           text-transform: uppercase;
           font-size: 700; }
-        .container .box .head-section .setting .toggle-theme-btn {
+        .container .box .head-section .setting .toggle-theme-switch {
           position: relative;
           display: flex;
           justify-content: space-evenly;
           align-items: center;
           text-align: center;
           padding: 0 0.5rem;
-          background-color: yellow;
           border-radius: 100px;
-          width: 6.8rem;
+          width: 6rem;
           height: 2rem; }
-          .container .box .head-section .setting .toggle-theme-btn .indicator {
+          .container .box .head-section .setting .toggle-theme-switch.theme-one {
+            background-color: #232c43; }
+          .container .box .head-section .setting .toggle-theme-switch.theme-two {
+            background-color: #d1cccc; }
+          .container .box .head-section .setting .toggle-theme-switch.theme-three {
+            background-color: #1d0934; }
+          .container .box .head-section .setting .toggle-theme-switch .indicator {
             position: absolute;
             width: 1.6rem;
             height: 1.6rem;
-            background-color: black;
             border-radius: 100px;
-            transform: translateX(-2.3rem);
-            /*-2.3rem 0rem 2.3rem*/ }
-          .container .box .head-section .setting .toggle-theme-btn .theme-1 {
+            transform: translateX(-2rem);
+            /*-2rem 0rem 2rem*/ }
+            .container .box .head-section .setting .toggle-theme-switch .indicator.theme-one {
+              background-color: #d03f2f; }
+            .container .box .head-section .setting .toggle-theme-switch .indicator.theme-two {
+              background-color: #ca5502; }
+            .container .box .head-section .setting .toggle-theme-switch .indicator.theme-three {
+              background-color: #00e0d1; }
+          .container .box .head-section .setting .toggle-theme-switch .theme-1, .container .box .head-section .setting .toggle-theme-switch .theme-2, .container .box .head-section .setting .toggle-theme-switch .theme-3 {
             width: 100%;
             height: 2rem; }
-          .container .box .head-section .setting .toggle-theme-btn .theme-2 {
-            width: 100%;
-            height: 2rem; }
-          .container .box .head-section .setting .toggle-theme-btn .theme-3 {
-            width: 100%;
-            height: 2rem; }
-          .container .box .head-section .setting .toggle-theme-btn .theme-text {
+          .container .box .head-section .setting .toggle-theme-switch .theme-text {
             position: absolute;
             transform: translate(-5px, -16px); }
     .container .box .display-section {
       width: 100%;
       text-align: end;
       padding: 2.4rem 1.6rem;
-      background-color: aqua;
-      border-radius: 0.5rem; }
+      border-radius: 1rem; }
+      .container .box .display-section.theme-one {
+        background-color: #182034;
+        color: white; }
+      .container .box .display-section.theme-two {
+        background-color: #ededed;
+        color: black; }
+      .container .box .display-section.theme-three {
+        background-color: #160628;
+        color: #ffe53d; }
     .container .box .keypad-section {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
-      padding: 1.6rem;
-      background-color: aquamarine;
-      border-radius: 0.5rem; }
+      gap: 2.8rem;
+      padding: 2.8rem;
+      border-radius: 1rem; }
+      .container .box .keypad-section.theme-one {
+        background-color: #232c43; }
+      .container .box .keypad-section.theme-two {
+        background-color: #d1cccc; }
+      .container .box .keypad-section.theme-three {
+        background-color: #1d0934; }
       .container .box .keypad-section .keypad-btn {
-        height: 5rem; }
+        height: 5rem;
+        border-radius: 0.8rem;
+        font-weight: 900;
+        font-size: 3.2rem;
+        text-transform: uppercase;
+        transition: all 0.025s ease-in; }
+        .container .box .keypad-section .keypad-btn:nth-child(4), .container .box .keypad-section .keypad-btn:nth-child(16), .container .box .keypad-section .keypad-btn:nth-child(17), .container .box .keypad-section .keypad-btn:nth-child(18) {
+          font-size: 2rem !important; }
+        .container .box .keypad-section .keypad-btn.reset-btn {
+          grid-column: 1/3; }
+        .container .box .keypad-section .keypad-btn.equal-btn {
+          grid-column: 3/5; }
+        .container .box .keypad-section .keypad-btn.theme-one {
+          background-color: #e5e4e1;
+          color: #444b5a;
+          box-shadow: 0 0.5rem 0 #b4a597; }
+          .container .box .keypad-section .keypad-btn.theme-one:hover {
+            background-color: white; }
+          .container .box .keypad-section .keypad-btn.theme-one:active {
+            box-shadow: 0 0.25rem 0 #b4a597;
+            transform: translateY(0.25rem); }
+          .container .box .keypad-section .keypad-btn.theme-one:nth-child(4), .container .box .keypad-section .keypad-btn.theme-one:nth-child(17) {
+            color: white;
+            background-color: #637097;
+            box-shadow: 0 0.5rem 0 #404e72; }
+            .container .box .keypad-section .keypad-btn.theme-one:nth-child(4):hover, .container .box .keypad-section .keypad-btn.theme-one:nth-child(17):hover {
+              background-color: #808bac; }
+            .container .box .keypad-section .keypad-btn.theme-one:nth-child(4):active, .container .box .keypad-section .keypad-btn.theme-one:nth-child(17):active {
+              box-shadow: 0 0.25rem 0 #404e72;
+              transform: translateY(0.25rem); }
+          .container .box .keypad-section .keypad-btn.theme-one:nth-child(18) {
+            color: white;
+            background-color: #d03f2f;
+            box-shadow: 0 0.5rem 0 #93261a; }
+            .container .box .keypad-section .keypad-btn.theme-one:nth-child(18):hover {
+              background-color: #d96659; }
+            .container .box .keypad-section .keypad-btn.theme-one:nth-child(18):active {
+              box-shadow: 0 0.25rem 0 #93261a;
+              transform: translateY(0.25rem); }
+        .container .box .keypad-section .keypad-btn.theme-two {
+          background-color: #eae3dc;
+          color: #35352c;
+          box-shadow: 0 0.5rem 0 #a69d91; }
+          .container .box .keypad-section .keypad-btn.theme-two:hover {
+            background-color: white; }
+          .container .box .keypad-section .keypad-btn.theme-two:active {
+            box-shadow: 0 0.25rem 0 #a69d91;
+            transform: translateY(0.25rem); }
+          .container .box .keypad-section .keypad-btn.theme-two:nth-child(4), .container .box .keypad-section .keypad-btn.theme-two:nth-child(17) {
+            background-color: #377f86;
+            color: white;
+            box-shadow: 0 0.5rem 0 #1b5f65; }
+            .container .box .keypad-section .keypad-btn.theme-two:nth-child(4):hover, .container .box .keypad-section .keypad-btn.theme-two:nth-child(17):hover {
+              background-color: #46a2aa; }
+            .container .box .keypad-section .keypad-btn.theme-two:nth-child(4):active, .container .box .keypad-section .keypad-btn.theme-two:nth-child(17):active {
+              box-shadow: 0 0.25rem 0 #1b5f65;
+              transform: translateY(0.25rem); }
+          .container .box .keypad-section .keypad-btn.theme-two:nth-child(18) {
+            background-color: #ca5502;
+            color: white;
+            box-shadow: 0 0.5rem 0 #893901; }
+            .container .box .keypad-section .keypad-btn.theme-two:nth-child(18):hover {
+              background-color: #fc6b03; }
+            .container .box .keypad-section .keypad-btn.theme-two:nth-child(18):active {
+              box-shadow: 0 0.25rem 0 #893901;
+              transform: translateY(0.25rem); }
+        .container .box .keypad-section .keypad-btn.theme-three {
+          background-color: #341c4f;
+          color: #ffe53d;
+          box-shadow: 0 0.5rem 0 #871c9c; }
+          .container .box .keypad-section .keypad-btn.theme-three:hover {
+            background-color: #4d2a74; }
+          .container .box .keypad-section .keypad-btn.theme-three:active {
+            box-shadow: 0 0.25rem 0 #871c9c;
+            transform: translateY(0.25rem); }
+          .container .box .keypad-section .keypad-btn.theme-three:nth-child(4), .container .box .keypad-section .keypad-btn.theme-three:nth-child(17) {
+            background-color: #58077d;
+            color: white;
+            box-shadow: 0 0.5rem 0 #bc15f4; }
+            .container .box .keypad-section .keypad-btn.theme-three:nth-child(4):hover, .container .box .keypad-section .keypad-btn.theme-three:nth-child(17):hover {
+              background-color: #7a0aae; }
+            .container .box .keypad-section .keypad-btn.theme-three:nth-child(4):active, .container .box .keypad-section .keypad-btn.theme-three:nth-child(17):active {
+              box-shadow: 0 0.25rem 0 #bc15f4;
+              transform: translateY(0.25rem); }
+          .container .box .keypad-section .keypad-btn.theme-three:nth-child(18) {
+            background-color: #00e0d1;
+            color: black;
+            box-shadow: 0 0.5rem 0 #6cf9f2; }
+            .container .box .keypad-section .keypad-btn.theme-three:nth-child(18):hover {
+              background-color: #14ffef; }
+            .container .box .keypad-section .keypad-btn.theme-three:nth-child(18):active {
+              box-shadow: 0 0.25rem 0 #6cf9f2;
+              transform: translateY(0.25rem); }
+
+@media (max-width: 37.5rem) {
+  body {
+    max-width: 37.5rem; }
+  .container {
+    width: 100%; }
+    .container .box {
+      width: 100%; }
+      .container .box .keypad-section {
+        gap: 1.8rem !important; }
+        .container .box .keypad-section .keypad-btn {
+          font-size: 2.4rem; }
+          .container .box .keypad-section .keypad-btn:nth-child(4), .container .box .keypad-section .keypad-btn:nth-child(17), .container .box .keypad-section .keypad-btn:nth-child(18) {
+            font-size: 1.8rem !important; } }
