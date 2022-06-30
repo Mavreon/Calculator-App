@@ -1,8 +1,11 @@
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: all 0.15s ease-in; }
+  transition: all 0.15s ease-in;
+  border: none; }
 
 html {
   font-size: 62.5%; }
@@ -20,7 +23,6 @@ body {
   height: 100vh; }
 
 .container {
-  background-color: red;
   width: 100%;
   height: 98%;
   display: flex;
@@ -30,7 +32,10 @@ body {
   .container .box {
     width: 40%;
     background-color: blue;
-    padding: 2rem; }
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem; }
     .container .box .head-section {
       width: 100%;
       display: flex;
@@ -74,3 +79,18 @@ body {
           .container .box .head-section .setting .toggle-theme-btn .theme-text {
             position: absolute;
             transform: translate(-5px, -16px); }
+    .container .box .display-section {
+      width: 100%;
+      text-align: end;
+      padding: 2.4rem 1.6rem;
+      background-color: aqua;
+      border-radius: 0.5rem; }
+    .container .box .keypad-section {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      padding: 1.6rem;
+      background-color: aquamarine;
+      border-radius: 0.5rem; }
+      .container .box .keypad-section .keypad-btn {
+        height: 5rem; }

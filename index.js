@@ -5,7 +5,6 @@ console.log(indicator);
 
 themeToggles.forEach(themeToggle => {
     themeToggle.addEventListener('click', ()=>{
-        // console.log(themeToggle + " Clicked");
         CheckToggleState(themeToggle);
     });
 });
