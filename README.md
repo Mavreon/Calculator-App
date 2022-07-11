@@ -1,4 +1,4 @@
-# Frontend Mentor - Calculator app
+# Calculator app
 
 Live Link(Netlify): https://gorgeous-phoenix-5b16df.netlify.app
 
